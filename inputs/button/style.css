@@ -1,0 +1,84 @@
+.button_root {
+  display: inline-flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  vertical-align: middle;
+
+  padding: 5px 15px;
+  width: 100%;
+  min-width: 36px;
+  font-size: 0.875rem;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 2.0;
+  border-radius: 4px;
+  letter-spacing: 0.02857em;
+
+  cursor: pointer;
+  outline:0;
+  box-sizing: border-box;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,border 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+
+/* contained style */
+.button_contained {
+  color: #ffffff;
+  background-color: #1976d2;
+  box-shadow:
+    0px 3px 1px -2px rgba(0,0,0,0.2),
+    0px 2px 2px 0px rgba(0,0,0,0.14),
+    0px 1px 5px 0px rgba(0,0,0,0.12);
+  border: None;
+}
+.button_contained:hover {
+  background-color: rgb(17, 82, 147);
+
+}
+
+/* outlined style */
+.button_outlined {
+  border: 1px solid #000;
+  background-color: transparent;
+}
+
+
+/* Ripple effect */
+.ripple {
+  background-position: center;
+  transition: background 600ms;
+}
+
+.ripple:hover {
+  /*
+  background: #ffffff
+    radial-gradient(circle, #f00 4%, #0000ff 14%) center / 15000%;
+  */
+  background-color: var(--theme-primary);
+  background-image: radial-gradient(circle, transparent 1%, var(--theme-primary) 1%);
+  /* radial-gradient(形状・位置, 開始色・その終了, 中間色・その終了) */
+  /* background-position: center; */
+  background-size: 15000%;
+}
+.ripple:active {
+  background-color: #cccccc;
+  background-size: 10%;
+  transition: background 0s; /* :active への transition は 0ms */
+}
+
+.isactive {
+  background-color: var(--theme-is-active);
+}
+.ripple.isactive:hover {
+  background-color: var(--theme-is-active);
+  background-image: radial-gradient(
+        circle, transparent 1%, var(--theme-is-active) 1%);
+}
+.ripple.isactive:active {
+  background-color: #ffffff;
+}
+

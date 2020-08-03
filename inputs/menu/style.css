@@ -1,0 +1,32 @@
+.wrapper {
+  position: relative;
+}
+.label {
+  position: absolute;
+  top: -16px;
+  font-size: 10px;
+}
+
+.caret {
+  position: absolute;
+  right: 8px;
+  top: 0;
+  bottom: 0;
+  margin: auto 0;
+  z-index: 0;
+  fill: rgba(0,0,0,0.87);
+  cursor: pointer;
+}
+
+.menu {
+  position: absolute;
+  width: 100%;
+  z-index: 100;
+
+  transform: scale(0);
+  transform-origin: top;
+  transition: transform 0.2s;
+}
+.menu.shown {
+  transform: scale(1);
+}
