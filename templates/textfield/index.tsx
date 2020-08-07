@@ -17,6 +17,17 @@ const TextFieldSample: FunctionalComponent = () => {
           ></TextField>
         </Grid>
       </Grid>
+
+      <span>simple textarea</span>
+      <Grid container m='4px 0 48px' p='0'>
+        <Grid flex={1}>
+          <TextField
+            isTextArea={true}
+            rows={2}
+            label='simple textfield!!!'
+          ></TextField>
+        </Grid>
+      </Grid>
     </Fragment>
   );
 };
