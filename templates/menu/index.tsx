@@ -1,7 +1,7 @@
 import { h, FunctionalComponent, Fragment } from 'preact';
 import { useState, useEffect } from 'preact/hooks';
 
-import {buildParams} from '../../../../utils/param';
+import {buildParams} from '../../utils/param';
 
 import Grid from '../../layouts/grid'
 import Menu from '../../inputs/menu'
