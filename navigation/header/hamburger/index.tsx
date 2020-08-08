@@ -1,7 +1,7 @@
 import { h, FunctionalComponent } from 'preact';
 import { useState, useRef } from 'preact/hooks';
 import style from './style.css';
-import {Item, Paper} from '../../../inputs/paper';
+import {Item, PaperList} from '../../../inputs/paperlist';
 
 
 interface Props {
@@ -45,7 +45,7 @@ const Hamburger: FunctionalComponent<Props> = (props: Props) => {
         class={`${style.menuWrapper} ${isActive ? style.isActive : ''}`}
         ref={popupRef}
       >
-        <Paper items={props.items} />
+        <PaperList items={props.items} />
       </div>
     </div>
   );

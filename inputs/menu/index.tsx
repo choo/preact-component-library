@@ -2,7 +2,7 @@ import { h, FunctionalComponent } from 'preact';
 import { useState, useRef } from 'preact/hooks';
 import style from './style.css';
 import Button from '../button';
-import {Item, Paper} from '../paper';
+import {Item, PaperList} from '../paperlist';
 
 
 interface Props {
@@ -76,7 +76,7 @@ const Menu: FunctionalComponent<Props> = (props: Props) => {
         style={props.style} // bottom: OOpx...
         ref={popupRef}
       >
-        <Paper
+        <PaperList
           onSelect={props.onSelect}
           selected={props.selected}
           items={props.items}
