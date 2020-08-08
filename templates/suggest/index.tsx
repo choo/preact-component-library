@@ -3,7 +3,7 @@ import { useState } from 'preact/hooks';
 
 import Grid from '../../layouts/grid'
 import TextField from '../../inputs/textfield'
-import {Paper} from '../../inputs/paper';
+import {PaperList} from '../../inputs/paperlist';
 
 
 const SuggestSample: FunctionalComponent = () => {
@@ -35,7 +35,7 @@ const SuggestSample: FunctionalComponent = () => {
             position: 'absolute',
             width: '100%',
           }}>
-            <Paper items={[{text: 'aaa'}, {text: text}]} />
+            <PaperList items={[{text: 'aaa'}, {text: text}]} />
           </div>
         ) : null}
       </div>
