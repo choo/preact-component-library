@@ -2,7 +2,6 @@ import { h, FunctionalComponent, Fragment } from 'preact';
 import { useState, useEffect } from 'preact/hooks';
 
 import {buildParams} from '../../../../utils/param';
-//import {ajax} from '../../../../utils/ajax';
 
 import Grid from '../../layouts/grid'
 import Menu from '../../inputs/menu'
@@ -16,16 +15,12 @@ const MenuSample: FunctionalComponent = () => {
   const initParams = buildParams(initialParams);
   const [params, setParams] = useState<Params>(initParams);
   useEffect(() => {
-    /* cf.) https://stackoverflow.com/questions/57238928/react-typescript-16-8-how-to-make-useeffect-async */
     updateParams({page: initParams.page || 1});
   }, [])
   const updateParams = (updatedParams: Params) => {
     updatedParams.page = updatedParams.page || 1;
     const newParams = {...params, ...updatedParams};
     setParams(newParams);
-    //ajax(ajaxUrl, newParams, (result) => {
-    //  setAjaxResults(result);
-    //});
   };
 
   return (
