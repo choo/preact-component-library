@@ -1,7 +1,9 @@
 import { h, FunctionalComponent } from 'preact';
+import { useState } from 'preact/hooks';
 import style from './style.css';
 
 interface Props {
+  value?: string,
   onInput?: (value: string) => void,
   onKeyDown?: (event: any) => void, // e.target.value は onInput と異なり遅延
   label?: string,
@@ -9,7 +11,8 @@ interface Props {
   rows?: number,
 }
 
-const TextField: FunctionalComponent<Props> = (props) => {
+const TextField: FunctionalComponent<Props> = (props: Props) => {
+  const [text, setText] = useState<string>(props.value || '');
   const onInput = props.onInput || (() => {});
   const onKeyDown = props.onKeyDown || (() => {});
   const rows = props.rows || 1;
@@ -19,12 +22,22 @@ const TextField: FunctionalComponent<Props> = (props) => {
       {props.isTextArea ? (
         <textarea class={style.input} placeholder={props.label}
           rows={rows}
-          onInput={(evt) => onInput(evt.currentTarget.value)}
+          value={text}
+          onInput={(evt) => {
+            const txt = evt.currentTarget.value;
+            setText(txt);
+            onInput(txt);
+          }}
           onKeyDown={(evt) => onKeyDown(evt)}
         />
       ) : (
-        <input type="text" class={style.input} placeholder={props.label}
-          onInput={(evt) => onInput(evt.currentTarget.value)}
+        <input type="text" class={style.input} placeholder={props.label || ''}
+          value={text}
+          onInput={(evt) => {
+            const txt = evt.currentTarget.value;
+            setText(txt);
+            onInput(txt);
+          }}
           onKeyDown={(evt) => onKeyDown(evt)}
         />
       )}

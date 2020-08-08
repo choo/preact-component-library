@@ -7,7 +7,8 @@ import {PaperList} from '../../inputs/paperlist';
 
 
 const SuggestSample: FunctionalComponent = () => {
-  const [text, setText] = useState<string>('');
+  const [inputText, setInputText] = useState<string>('');
+  const [fixedText, setFixedText] = useState<string>('');
   return (
     <Fragment>
       <h2>TextFields</h2>
@@ -20,22 +21,33 @@ const SuggestSample: FunctionalComponent = () => {
           <Grid flex={1}>
             <TextField
               label='sample textfield'
+              value={inputText}
               onInput={(val) => {
-                setText(val);
+                setInputText(val);
               }}
               onKeyDown={(e) => {
                 //console.log(e.target.value);
-                console.log(e);
+                /*
+                 * e.key === 'Enter' は Chrome などでは IME の確定時も反応する
+                 * //console.log(e.key, e.keyCode);
+                 * //if (e.key === 'Enter' || e.keyCode === 13) {
+                 */
+                if (e.keyCode === 13) {
+                  if (fixedText !== inputText) {
+                    setFixedText(inputText);
+                    //e.target.blur();
+                  }
+                }
               }}
             />
           </Grid>
         </Grid>
-        {text ? (
+        {inputText ? (
           <div style={{
             position: 'absolute',
             width: '100%',
           }}>
-            <PaperList items={[{text: 'aaa'}, {text: text}]} />
+            <PaperList items={[{text: 'aaa'}, {text: inputText}]} />
           </div>
         ) : null}
       </div>
