@@ -17,6 +17,9 @@ const TopPage: FunctionalComponent = () => {
       <p>
         <a href='/suggest'>KeywordSuggest</a>
       </p>
+      <p>
+        <a href='/resultlist'>ResultList</a>
+      </p>
     </Fragment>
   );
 };
