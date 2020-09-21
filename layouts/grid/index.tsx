@@ -8,7 +8,7 @@ interface Props {
   container?: boolean,
   m?: string,
   p?: string,
-  flex?: number,
+  flex?: number | string,
   alignItems?: string, // center, baseline, ...
   justify?: string,
   style?: {[s: string]: string | number},
