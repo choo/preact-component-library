@@ -22,7 +22,7 @@ const TextField: FunctionalComponent<Props> = (props: Props) => {
       {props.isTextArea ? (
         <textarea class={style.input} placeholder={props.label}
           rows={rows}
-          value={text}
+          value={props.value == null ? text : props.value}
           onInput={(evt) => {
             const txt = evt.currentTarget.value;
             setText(txt);
@@ -32,7 +32,7 @@ const TextField: FunctionalComponent<Props> = (props: Props) => {
         />
       ) : (
         <input type="text" class={style.input} placeholder={props.label || ''}
-          value={text}
+          value={props.value == null ? text : props.value}
           onInput={(evt) => {
             const txt = evt.currentTarget.value;
             setText(txt);
