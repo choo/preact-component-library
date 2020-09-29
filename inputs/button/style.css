@@ -42,7 +42,8 @@
 
 /* outlined style */
 .button_outlined {
-  border: 1px solid #000;
+  color: var(--theme-on-primary);
+  border: 1px solid var(--theme-on-primary);
   background-color: transparent;
 }
 

@@ -6,7 +6,7 @@
   width: 100%;
   height: var(--theme-header-height);
   background: var(--theme-primary);
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 4px 12px var(--theme-on-primary);
   z-index: 50;
   display: flex;
   justify-content: center;
@@ -23,5 +23,5 @@
   font-size: var(--theme-header-font-size);
   line-height: var(--theme-header-height);
   font-weight: 400;
-  color: var(--theme-header-color);
+  color: var(--theme-on-primary);
 }
