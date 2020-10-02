@@ -9,6 +9,7 @@ interface Props {
   label?: string,
   isTextArea?: boolean,
   rows?: number,
+  style?: {[s: string]: string | number},
 }
 
 const TextField: FunctionalComponent<Props> = (props: Props) => {
@@ -29,6 +30,7 @@ const TextField: FunctionalComponent<Props> = (props: Props) => {
             onInput(txt);
           }}
           onKeyDown={(evt) => onKeyDown(evt)}
+          style={props.style ? {...props.style} : {}}
         />
       ) : (
         <input type="text" class={style.input} placeholder={props.label || ''}
@@ -39,6 +41,7 @@ const TextField: FunctionalComponent<Props> = (props: Props) => {
             onInput(txt);
           }}
           onKeyDown={(evt) => onKeyDown(evt)}
+          style={props.style ? {...props.style} : {}}
         />
       )}
       {/*<label class={style.label} >Outlined</label>*/}
