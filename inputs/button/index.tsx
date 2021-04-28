@@ -1,5 +1,5 @@
 import { h, FunctionalComponent } from 'preact';
-import style from './style.css';
+import style from './style.module.css';
 
 interface Props {
   outlined?: boolean, // 外枠のみにする

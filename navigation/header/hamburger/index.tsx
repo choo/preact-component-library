@@ -1,6 +1,6 @@
 import { h, FunctionalComponent } from 'preact';
 import { useState, useRef } from 'preact/hooks';
-import style from './style.css';
+import style from './style.module.css';
 import {Item, PaperList} from '../../../inputs/paperlist';
 
 

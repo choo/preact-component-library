@@ -1,5 +1,5 @@
 import { h, FunctionalComponent } from 'preact';
-import * as style from "./style.css";
+import * as style from "./style.module.css";
 import {Hamburger, HamburgerItems} from './hamburger';
 
 interface IProps {

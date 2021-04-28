@@ -1,5 +1,5 @@
 import { h, FunctionalComponent } from 'preact';
-import style from './style.css';
+import style from './style.module.css';
 
 interface Props {
   children?: h.JSX.Element[] | h.JSX.Element | string,

@@ -1,6 +1,6 @@
 import { h, FunctionalComponent } from 'preact';
 import Paper from '../paper';
-import style from './style.css';
+import style from './style.module.css';
 
 interface Props {
   onSelect?: (code: string | number) => void,
