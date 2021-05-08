@@ -1,4 +1,4 @@
-import Grid from '../../atoms/grid';
+import Grid from '../grid';
 
 /**
  * props {
