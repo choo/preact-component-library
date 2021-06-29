@@ -1,8 +1,10 @@
 type Params = {[s: string]: string | number | undefined};
 
 const ajax = async (url: string, params: Params) => {
-  const urlParams = Object.keys(params).filter(key => params[key]).map(key => (
-    `${key}=${(params[key] || '').toString()}`
+  const _isNullParam = v => (v == null || v === '');
+  const urlParams = Object.keys(params).filter(
+      key => !_isNullParam(params[key])).map(
+      key => (`${key}=${params[key].toString()}`
   ));
   try {
     const res = await fetch(`${url}?${urlParams.join("&")}`);
