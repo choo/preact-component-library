@@ -98,7 +98,7 @@
   min-width: menu-min-width;
   right: 0;
   margin: 0 auto;
-  z-index: 100;
+  z-index: var(--z-index-hamburger-menu, 100);
 
   transform: scale(0);
   transform-origin: top right;

@@ -7,7 +7,7 @@
   height: var(--theme-header-height);
   background: var(--theme-primary);
   box-shadow: 0 4px 12px var(--theme-on-primary);
-  z-index: 50;
+  z-index: var(--z-index-header, 50);
   display: flex;
   justify-content: center;
 }
