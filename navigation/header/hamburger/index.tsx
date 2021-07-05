@@ -27,7 +27,7 @@ const Hamburger: FunctionalComponent<Props> = (props: Props) => {
   }
 
   return (
-    <div class={style.wrapper}>
+    <div>
       <button type='button'
         class={
           style.hamburger + " " +

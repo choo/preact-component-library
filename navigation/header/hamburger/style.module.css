@@ -8,10 +8,7 @@
 @value hamburger-width: 40px;
 @value hamburger-height: calc(hamburger-width * 0.6); /* half of width */
 @value line-color: var(--theme-hamburger-color, var(--theme-on-primary));
-
-.wrapper {
-  position: relative;
-}
+@value menu-min-width: min(90vw, 240px);
 
 /*!
  * Hamburgers
@@ -69,11 +66,6 @@
   .hamburgerInner::before, .hamburgerInner::after {
     content: "";
     display: block; }
-  .hamburgerInner::before {
-    top: -12px; }
-  .hamburgerInner::after {
-    bottom: -12px; }
-
 
 /*
  * Slider
@@ -97,36 +89,13 @@
     transform: translate3d(0, calc(hamburger-height * -1), 0) rotate(-90deg); }
 
 /*
- * Slider Reverse
- */
-/*
-.hamburgerSliderR .hamburgerInner {
-  top: 0px; }
-  .hamburgerSliderR .hamburgerInner::before {
-    top: calc(hamburger-height / 2);
-    transition-property: transform, opacity;
-    transition-timing-function: ease;
-    transition-duration: 0.15s; }
-  .hamburgerSliderR .hamburgerInner::after {
-    top: hamburger-height; }
-
-.hamburgerSliderR.isActive .hamburgerInner {
-  transform: translate3d(0, calc(hamburger-height / 2), 0) rotate(-45deg); }
-  .hamburgerSliderR.isActive .hamburgerInner::before {
-    transform: rotate(45deg) translate3d(5.71429px, calc(hamburger-height / 4), 0);
-    opacity: 0; }
-  .hamburgerSliderR.isActive .hamburgerInner::after {
-    transform: translate3d(0, calc(hamburger-height * -1), 0) rotate(90deg); }
-*/
-
-/*
  * Menu
  */
 .menuWrapper {
   position: absolute;
   top: calc(hamburger-padding-top-bottom * 2 +
             hamburger-line-weight * 3 + hamburger-height);
-  min-width: min(90vw, 240px);
+  min-width: menu-min-width;
   right: 0;
   margin: 0 auto;
   z-index: 100;
