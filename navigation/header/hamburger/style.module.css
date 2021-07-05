@@ -2,6 +2,13 @@
  * this style sheet is cited from https://github.com/jonsuh/hamburgers
  */
 
+
+@value hamburger-padding-top-bottom: 6px;
+@value hamburger-line-weight: 3px;
+@value hamburger-width: 40px;
+@value hamburger-height: calc(hamburger-width * 0.6); /* half of width */
+@value line-color: var(--theme-hamburger-color, var(--theme-on-primary));
+
 .wrapper {
   position: relative;
 }
@@ -16,7 +23,7 @@
 .hamburger {
   /*padding: 15px 15px;*/
   /*padding: 12px 0;*/
-  padding: 6px 0;
+  padding: hamburger-padding-top-bottom 0;
   display: inline-block;
   cursor: pointer;
   transition-property: opacity, filter;
@@ -28,6 +35,7 @@
   background-color: transparent;
   border: 0;
   margin: 0;
+  outline: none;
   overflow: visible; }
   .hamburger:hover {
     opacity: 0.7; }
@@ -36,11 +44,12 @@
   .hamburger.isActive .hamburgerInner,
   .hamburger.isActive .hamburgerInner::before,
   .hamburger.isActive .hamburgerInner::after {
-    background-color: var(--theme-on-primary); }
+    background-color: line-color; }
 
 .hamburgerBox {
-  width: 40px;
-  height: 24px;
+/* area to be clicked */
+  width: hamburger-width;
+  height: hamburger-height;
   display: inline-block;
   position: relative; }
 
@@ -49,9 +58,9 @@
   top: 50%;
   margin-top: 4px; }
   .hamburgerInner, .hamburgerInner::before, .hamburgerInner::after {
-    width: 40px;
-    height: 3px;
-    background-color: var(--theme-on-primary);
+    width: hamburger-width;
+    height: hamburger-line-weight;
+    background-color: line-color;
     /* border-radius: 4px; */
     position: absolute;
     transition-property: transform;
@@ -70,52 +79,54 @@
  * Slider
  */
 .hamburgerSlider .hamburgerInner {
-  top: 2px; }
+  top: 0px; }
   .hamburgerSlider .hamburgerInner::before {
-    top: 12px;
+    top: calc(hamburger-height / 2);
     transition-property: transform, opacity;
     transition-timing-function: ease;
     transition-duration: 0.15s; }
   .hamburgerSlider .hamburgerInner::after {
-    top: 24px; }
+    top: hamburger-height; }
 
 .hamburgerSlider.isActive .hamburgerInner {
-  transform: translate3d(0, 12px, 0) rotate(45deg); }
+  transform: translate3d(0, calc(hamburger-height / 2), 0) rotate(45deg); }
   .hamburgerSlider.isActive .hamburgerInner::before {
-    transform: rotate(-45deg) translate3d(-5.71429px, -6px, 0);
+    transform: rotate(-45deg) translate3d(-5.71429px, calc(hamburger-height / 4), 0);
     opacity: 0; }
   .hamburgerSlider.isActive .hamburgerInner::after {
-    transform: translate3d(0, -24px, 0) rotate(-90deg); }
+    transform: translate3d(0, calc(hamburger-height * -1), 0) rotate(-90deg); }
 
 /*
-   * Slider Reverse
-   */
+ * Slider Reverse
+ */
+/*
 .hamburgerSliderR .hamburgerInner {
-  top: 2px; }
+  top: 0px; }
   .hamburgerSliderR .hamburgerInner::before {
-    top: 12px;
+    top: calc(hamburger-height / 2);
     transition-property: transform, opacity;
     transition-timing-function: ease;
     transition-duration: 0.15s; }
   .hamburgerSliderR .hamburgerInner::after {
-    top: 24px; }
+    top: hamburger-height; }
 
 .hamburgerSliderR.isActive .hamburgerInner {
-  transform: translate3d(0, 12px, 0) rotate(-45deg); }
+  transform: translate3d(0, calc(hamburger-height / 2), 0) rotate(-45deg); }
   .hamburgerSliderR.isActive .hamburgerInner::before {
-    transform: rotate(45deg) translate3d(5.71429px, -6px, 0);
+    transform: rotate(45deg) translate3d(5.71429px, calc(hamburger-height / 4), 0);
     opacity: 0; }
   .hamburgerSliderR.isActive .hamburgerInner::after {
-    transform: translate3d(0, -24px, 0) rotate(90deg); }
-
+    transform: translate3d(0, calc(hamburger-height * -1), 0) rotate(90deg); }
+*/
 
 /*
  * Menu
  */
 .menuWrapper {
   position: absolute;
-  top: var(--theme-header-height);
-  min-width: 240px;
+  top: calc(hamburger-padding-top-bottom * 2 +
+            hamburger-line-weight * 3 + hamburger-height);
+  min-width: min(90vw, 240px);
   right: 0;
   margin: 0 auto;
   z-index: 100;
