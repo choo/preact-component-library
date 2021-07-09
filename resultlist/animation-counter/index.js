@@ -1,5 +1,9 @@
 import { useState, useEffect } from 'preact/hooks';
 
+const commify = (x) => {
+  return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+};
+
 /**
  * props:
  *    target   : (required) Target Value to render 
@@ -41,7 +45,7 @@ const AnimationCounter = props => {
 
   return (
     <span style={{...props.style}}>
-      {value}
+      {commify(value)}
     </span>
   );
 };
