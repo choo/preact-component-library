@@ -1,3 +1,4 @@
+/*
 export const commify = (num: number): string => {
   num -= 0;
   if (num === 0) {
@@ -16,6 +17,15 @@ export const commify = (num: number): string => {
   }
   ret.reverse();
   return ret.join('');
+};
+ */
+
+/*
+ * the same as in animation counter
+ */
+export const commify = (x) => {
+  x = x == null ? '' : x;
+  return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 };
 
 
