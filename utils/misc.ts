@@ -28,6 +28,28 @@ export const commify = (x) => {
   return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 };
 
+export const judgeDeviceType = () => {
+  /*
+   * 1: SP portrait
+   * 2: Tablet Portrait & large SP landscape
+   * 3: Normal Desktop & Tablet landscape
+   * 4: Large Desktop
+   * cf.) ../styles/global.css
+   */
+  if (typeof window === "undefined" || !window.matchMedia) {
+    return -1;
+  }
+  if (window.matchMedia('(max-width: 576px)').matches) {
+    return 1;
+  } else if (window.matchMedia('(max-width: 768px)').matches) {
+    return 2;
+  } else if (window.matchMedia('(max-width: 1200px)').matches) {
+    return 3;
+  } else {
+    return 4;
+  }
+};
+
 
 //// Element to move, time in ms to animate
 //export const smoothScroll = (element, duration) => {
