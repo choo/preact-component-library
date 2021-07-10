@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'preact/hooks';
 
 const commify = (x) => {
+  x = x == null ? '' : x;
   return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 };
 
