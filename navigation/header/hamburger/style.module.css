@@ -3,9 +3,9 @@
  */
 
 
-@value hamburger-padding-top-bottom: 6px;
-@value hamburger-line-weight: 3px;
-@value hamburger-width: 40px;
+@value hamburger-padding-top-bottom: 8px;
+@value hamburger-line-weight: 2px;
+@value hamburger-width: 32px;
 @value hamburger-height: calc(hamburger-width * 0.6); /* half of width */
 @value line-color: var(--theme-hamburger-color, var(--theme-on-primary));
 @value menu-min-width: min(90vw, 240px);
