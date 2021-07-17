@@ -14,19 +14,20 @@ export interface Item {
   text: string,
   code?: string | number,
   href?: string,
+  onClickItem?: (any) => void,
 }
 
 export const PaperList: FunctionalComponent<Props> = (props: Props) => {
-  const onSelect = props.onSelect || (() => {});
   return (
     <Paper>
       {props.items ? props.items.map((item: Item, idx: number) => {
         const code = item.code || item.text;
         const selected = props.selected && (props.selected === code);
+        const onClickItem = item.onClickItem || props.onSelect || (() => {});
         return (
           <a key={idx}
             class={`${style.paperitem} ${selected ? style.isActive : ''} ${props.noBorder ? style.noBorder : ''}`}
-            onClick={() => onSelect(code)}
+            onClick={() => onClickItem(code)}
             href={item.href || ('javascript: void(0)')}
           >
             {item.text}
