@@ -49,6 +49,10 @@ export const judgeDeviceType = () => {
     return 4;
   }
 };
+export const isSP = () => {
+  const deviceType = judgeDeviceType();
+  return 0 <= deviceType && deviceType <= 2;
+};
 
 
 //// Element to move, time in ms to animate
