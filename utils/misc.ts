@@ -53,6 +53,15 @@ export const isSP = () => {
   const deviceType = judgeDeviceType();
   return 0 <= deviceType && deviceType <= 2;
 };
+export const isPortrait = () => {
+  if (typeof window === "undefined" || !window.matchMedia) {
+    return false;
+  }
+  return window.matchMedia('(orientation: portrait)').matches;
+};
+export const isSPView = () => {
+  return isSP() && isPortrait();
+};
 
 
 //// Element to move, time in ms to animate
