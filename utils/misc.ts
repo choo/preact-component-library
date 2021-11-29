@@ -64,6 +64,29 @@ export const isSPView = () => {
 };
 
 
+const _isFrontEnd = () => {
+  return (typeof window !== 'undefined' &&
+          typeof document !== "undefined" && document.documentElement);
+};
+export const getCSSVariable = (key: string) => {
+  if (!_isFrontEnd()) return null;
+  return window.getComputedStyle(document.body).getPropertyValue(key);
+};
+export const vh = (v: float) => {
+  if (!_isFrontEnd()) return null;
+  const h = Math.max(document.documentElement.clientHeight,
+                     window.innerHeight || 0);
+  return (v * h) / 100;
+};
+export const vw = (v: float) => {
+  if (!_isFrontEnd()) return null;
+  const w = Math.max(document.documentElement.clientWidth,
+                     window.innerWidth || 0);
+  return (v * w) / 100;
+};
+
+
+
 //// Element to move, time in ms to animate
 //export const smoothScroll = (element, duration) => {
 //    var e = document.documentElement;
