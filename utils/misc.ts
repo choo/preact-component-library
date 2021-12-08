@@ -74,14 +74,18 @@ export const getCSSVariable = (key: string) => {
 };
 export const vh = (v: float) => {
   if (!_isFrontEnd()) return null;
-  const h = Math.max(document.documentElement.clientHeight,
-                     window.innerHeight || 0);
+  const h = (window.innerHeight && document.documentElement.clientHeight) ?
+      Math.min(window.innerHeight, document.documentElement.clientHeight) :
+      (window.innerHeight || document.documentElement.clientHeight ||
+      document.getElementsByTagName('body')[0].clientHeight);
   return (v * h) / 100;
 };
 export const vw = (v: float) => {
   if (!_isFrontEnd()) return null;
-  const w = Math.max(document.documentElement.clientWidth,
-                     window.innerWidth || 0);
+  const w = (window.innerWidth && document.documentElement.clientWidth) ?
+      Math.min(window.innerWidth, document.documentElement.clientWidth) :
+      (window.innerWidth || document.documentElement.clientWidth ||
+      document.getElementsByTagName('body')[0].clientWidth);
   return (v * w) / 100;
 };
 
