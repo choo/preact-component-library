@@ -49,6 +49,10 @@ export const judgeDeviceType = () => {
     return 4;
   }
 };
+export const isXS = () => {
+  const deviceType = judgeDeviceType();
+  return deviceType === 1;
+};
 export const isSP = () => {
   const deviceType = judgeDeviceType();
   return 0 <= deviceType && deviceType <= 2;
