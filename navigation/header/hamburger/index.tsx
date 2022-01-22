@@ -8,6 +8,7 @@ interface Props {
   items: Item[],
 }
 type HamburgerItems = Item[];
+const BUTTON_LABEL_NAME = 'Hamburger Menu';
 
 const Hamburger: FunctionalComponent<Props> = (props: Props) => {
   const [isActive, setActive] = useState<boolean>(false);
@@ -34,6 +35,8 @@ const Hamburger: FunctionalComponent<Props> = (props: Props) => {
           style.hamburgerSlider + " " +
           (isActive ? style.isActive : '')
         }
+        aria-label={BUTTON_LABEL_NAME}
+        aria-pressed={isActive ? "true" : "false"}
         onClick={toggleMenu}
       >
         <span class={style.hamburgerBox}>
