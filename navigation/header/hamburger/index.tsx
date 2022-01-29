@@ -5,7 +5,8 @@ import {Item, PaperList} from '../../../inputs/paperlist';
 
 
 interface Props {
-  items: Item[],
+  items?: Item[],
+  children?: h.JSX.Element[] | h.JSX.Element | string,
 }
 type HamburgerItems = Item[];
 const BUTTON_LABEL_NAME = 'Hamburger Menu';
@@ -48,7 +49,11 @@ const Hamburger: FunctionalComponent<Props> = (props: Props) => {
         class={`${style.menuWrapper} ${isActive ? style.isActive : ''}`}
         ref={popupRef}
       >
-        <PaperList items={props.items} />
+        {props.items ? (
+          <PaperList items={props.items} />
+        ) : (
+          <PaperList children={props.children} />
+        )}
       </div>
     </div>
   );
