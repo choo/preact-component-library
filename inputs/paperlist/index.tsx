@@ -24,14 +24,12 @@ export const PaperList: FunctionalComponent<Props> = (props: Props) => {
         const code = item.code || item.text;
         const selected = props.selected && (props.selected === code);
         const onClickItem = item.onClickItem || props.onSelect || (() => {});
+        const className = style.paperitem + ' ' +
+                          (selected ? style.isActive + ' ' : '') +
+                          (props.noBorder ? style.noBorder + ' ' : '');
         return (
-          <a key={idx}
-            class={`${style.paperitem} ${selected ? style.isActive : ''} ${props.noBorder ? style.noBorder : ''}`}
-            onClick={() => onClickItem(code)}
-            href={item.href || ('javascript: void(0)')}
-          >
-            {item.text}
-          </a>
+          <a key={idx} class={className} onClick={() => onClickItem(code)}
+             href={item.href || ('javascript: void(0)')} >{item.text}</a>
         )
       }) : props.children
       }
