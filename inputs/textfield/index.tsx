@@ -18,9 +18,9 @@ const TextField: FunctionalComponent<Props> = (props: Props) => {
   const rows = props.rows || 1;
   const height = `${rows * 56}px`;
   return (
-    <div class={style.wrapper} style={{height: height}}>
+    <div className={style.wrapper} style={{height: height}}>
       {props.isTextArea ? (
-        <textarea class={style.input} placeholder={props.label}
+        <textarea className={style.input} placeholder={props.label}
           rows={rows}
           value={props.value == null ? text : props.value}
           onInput={(evt) => {
@@ -32,7 +32,7 @@ const TextField: FunctionalComponent<Props> = (props: Props) => {
           style={props.style ? {...props.style} : {}}
         />
       ) : (
-        <input type="text" class={style.input} placeholder={props.label || ''}
+        <input type="text" className={style.input} placeholder={props.label || ''}
           value={props.value == null ? text : props.value}
           onInput={(evt) => {
             const txt = evt.currentTarget.value;
@@ -43,7 +43,7 @@ const TextField: FunctionalComponent<Props> = (props: Props) => {
           style={props.style ? {...props.style} : {}}
         />
       )}
-      {/*<label class={style.label} >Outlined</label>*/}
+      {/*<label className={style.label} >Outlined</label>*/}
     </div>
   );
 };

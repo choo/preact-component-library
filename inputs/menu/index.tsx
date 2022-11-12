@@ -55,15 +55,15 @@ const Menu: FunctionalComponent<Props> = (props: Props) => {
   }
 
   return (
-    <div class={style.wrapper} style={props.width ? {width: props.width} : {}}>
-      <label class={style.label}>{props.buttonText}</label>
+    <div className={style.wrapper} style={props.width ? {width: props.width} : {}}>
+      <label className={style.label}>{props.buttonText}</label>
       <Button outlined
         onClick={handleToggleButtonClick}
         style={{justifyContent: 'left',}}
       >
         {getCurrentText(props.items || [], props.selected || '')}
       </Button>
-      <svg class={style.caret} height="24" viewBox="0 0 24 24" width="24"
+      <svg className={style.caret} height="24" viewBox="0 0 24 24" width="24"
         onClick={handleToggleButtonClick}
       >
         <path d="M7 10l5 5 5-5z"></path>
@@ -71,7 +71,7 @@ const Menu: FunctionalComponent<Props> = (props: Props) => {
       </svg>
 
       <div
-        class={`${style.menu} ${isShown ? style.shown : ''}`}
+        className={`${style.menu} ${isShown ? style.shown : ''}`}
         style={props.style} // bottom: OOpx...
         ref={popupRef}
       >

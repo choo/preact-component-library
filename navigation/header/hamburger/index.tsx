@@ -30,7 +30,7 @@ const Hamburger: Component<Props> = (props: Props) => {
   return (
     <div>
       <button type='button'
-        class={
+        className={
           style.hamburger + " " +
           style.hamburgerSlider + " " +
           (isActive ? style.isActive : '')
@@ -39,13 +39,13 @@ const Hamburger: Component<Props> = (props: Props) => {
         aria-pressed={isActive ? "true" : "false"}
         onClick={toggleMenu}
       >
-        <span class={style.hamburgerBox}>
-          <span class={style.hamburgerInner}></span>
+        <span className={style.hamburgerBox}>
+          <span className={style.hamburgerInner}></span>
         </span>
       </button>
 
       <div
-        class={`${style.menuWrapper} ${isActive ? style.isActive : ''}`}
+        className={`${style.menuWrapper} ${isActive ? style.isActive : ''}`}
         ref={popupRef}
       >
         {props.items ? (

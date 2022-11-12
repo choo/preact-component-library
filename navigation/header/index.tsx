@@ -9,7 +9,7 @@ interface IProps {
 }
 
 const Header: Component<IProps> = (props: IProps) => (
-  <header class={style.header}>
+  <header className={style.header}>
     <a href='/'>
       {props.logoPath && (
         <img src={props.logoPath} />

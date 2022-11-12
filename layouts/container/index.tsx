@@ -10,7 +10,7 @@ interface Props {
 }
 
 const Container: FunctionalComponent<Props> = (props: Props) => (
-  <div class={style.container} style={props.style}>
+  <div className={style.container} style={props.style}>
     {props.children}
   </div>
 );

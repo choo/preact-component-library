@@ -27,7 +27,7 @@ export const PaperList: FunctionalComponent<Props> = (props: Props) => {
                           (selected ? style.isActive + ' ' : '') +
                           (props.noBorder ? style.noBorder + ' ' : '');
         return (
-          <a key={idx} class={className} onClick={() => onClickItem(code)}
+          <a key={idx} className={className} onClick={() => onClickItem(code)}
              href={item.href || ('javascript: void(0)')} >{item.text}</a>
         )
       }) : props.children

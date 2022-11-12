@@ -7,7 +7,7 @@ interface Props {
 
 const Paper: FunctionalComponent<Props> = (props: Props) => {
   return (
-    <div class={style.paper} style={props.style ? {...props.style} : {}}>
+    <div className={style.paper} style={props.style ? {...props.style} : {}}>
       {props.children}
     </div>
   );

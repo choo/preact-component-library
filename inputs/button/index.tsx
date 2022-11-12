@@ -21,7 +21,7 @@ const Button: FunctionalComponent<Props> = (props: Props) => {
   }
   return (
     <button
-      class={classes}
+      className={classes}
       style={{...props.style}}
       onClick={props.onClick}
       disabled={props.disabled}
