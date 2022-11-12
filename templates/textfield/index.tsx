@@ -1,12 +1,10 @@
-import { h, FunctionalComponent, Fragment } from 'preact';
-
 import Grid from '../../layouts/grid'
 import TextField from '../../inputs/textfield'
 
 
 const TextFieldSample: FunctionalComponent = () => {
   return (
-    <Fragment>
+    <>
       <h2>TextFields</h2>
 
       <span>simple textfield</span>
@@ -28,7 +26,7 @@ const TextFieldSample: FunctionalComponent = () => {
           ></TextField>
         </Grid>
       </Grid>
-    </Fragment>
+    </>
   );
 };
 

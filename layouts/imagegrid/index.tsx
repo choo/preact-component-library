@@ -1,4 +1,3 @@
-import { h, FunctionalComponent } from 'preact';
 import {ImageCell, Image} from '../imagecell'
 import Grid from '../grid'
 

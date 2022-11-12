@@ -1,4 +1,3 @@
-import { h, FunctionalComponent } from 'preact';
 import style from './style.module.css';
 
 interface Props {

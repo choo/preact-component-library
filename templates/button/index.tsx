@@ -1,5 +1,3 @@
-import { h, FunctionalComponent, Fragment } from 'preact';
-
 import Grid from '../../layouts/grid'
 import Button from '../../inputs/button'
 
@@ -7,7 +5,7 @@ import Button from '../../inputs/button'
 const ButtonSample: FunctionalComponent = () => {
   let isActive = false;
   return (
-    <Fragment>
+    <>
       <h2>Buttons</h2>
 
       <span>full width</span>
@@ -40,7 +38,7 @@ const ButtonSample: FunctionalComponent = () => {
         </Grid>
       </Grid>
 
-    </Fragment>
+    </>
   );
 };
 

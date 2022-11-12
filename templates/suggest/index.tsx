@@ -1,5 +1,4 @@
-import { h, FunctionalComponent, Fragment } from 'preact';
-import { useState } from 'preact/hooks';
+import { useState } from 'react';
 
 import Grid from '../../layouts/grid'
 import TextField from '../../inputs/textfield'
@@ -10,7 +9,7 @@ const SuggestSample: FunctionalComponent = () => {
   const [inputText, setInputText] = useState<string>('');
   const [fixedText, setFixedText] = useState<string>('');
   return (
-    <Fragment>
+    <>
       <h2>TextFields</h2>
 
       <span>suggest textfield</span>
@@ -52,7 +51,7 @@ const SuggestSample: FunctionalComponent = () => {
         ) : null}
       </div>
 
-    </Fragment>
+    </>
   );
 };
 

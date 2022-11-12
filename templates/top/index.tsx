@@ -1,8 +1,8 @@
-import { h, FunctionalComponent, Fragment } from 'preact';
+import { Component } from 'react';
 
-const TopPage: FunctionalComponent = () => {
+const TopPage: Component = () => {
   return (
-    <Fragment>
+    <>
       <h2>Top</h2>
       <h4>inputs</h4>
       <p>
@@ -20,7 +20,7 @@ const TopPage: FunctionalComponent = () => {
       <p>
         <a href='/resultlist'>ResultList</a>
       </p>
-    </Fragment>
+    </>
   );
 };
 

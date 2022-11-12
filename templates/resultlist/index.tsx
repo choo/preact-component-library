@@ -1,4 +1,4 @@
-import { h, FunctionalComponent } from 'preact';
+import { Component } from 'react';
 
 import {buildParams} from '../../utils/param';
 
@@ -25,7 +25,7 @@ type Params = {
 
 const AJAX_URL = '/assets/search_sample.json';
 
-const MenuList: FunctionalComponent<Params> = (props: Params) => {
+const MenuList: Component<Params> = (props: Params) => {
   const initialParams: Params = {
     kwd: props.kwd || '',
     page: props.page || 1,
@@ -51,7 +51,7 @@ type CassetteProps = {
   item: ResultItem,
   idx: number,
 };
-const Cassette: FunctionalComponent<CassetteProps> = (props: CassetteProps) => {
+const Cassette: Component<CassetteProps> = (props: CassetteProps) => {
   const item = props.item;
   return (
     <Grid container={true} m={'0 0 12px'}>
@@ -73,7 +73,7 @@ type CondProps = {
   params: Params,
   updateParams: any,
 };
-const Conditions: FunctionalComponent<CondProps> = (props: CondProps) => {
+const Conditions: Component<CondProps> = (props: CondProps) => {
   return (
     <Grid container m='4px 0 24px' p='0'>
       <Grid flex={1}>

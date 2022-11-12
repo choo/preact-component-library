@@ -1,4 +1,3 @@
-import { h, FunctionalComponent } from 'preact';
 import Paper from '../paper';
 import style from './style.module.css';
 

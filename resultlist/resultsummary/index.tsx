@@ -1,5 +1,3 @@
-import { h, FunctionalComponent, Fragment } from 'preact';
-
 import {commify} from '../../utils/misc';
 import Grid from '../../layouts/grid'
 import Pagination from '../pagination';
@@ -31,11 +29,11 @@ const ResultSummary: FunctionalComponent<Props> = (props: Props) => {
   )
 
   return (
-    <Fragment>
+    <>
       {resultSummary}
       {props.children}
       {resultSummary}
-    </Fragment>
+    </>
   );
 };
 

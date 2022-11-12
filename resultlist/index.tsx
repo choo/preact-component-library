@@ -1,5 +1,4 @@
-import { h, FunctionalComponent, Fragment } from 'preact';
-import { useState, useEffect } from 'preact/hooks';
+import { useState, useEffect } from 'react';
 
 import {ajax} from '../utils/ajax';
 import ResultSummary from './resultsummary';
@@ -56,7 +55,7 @@ const ResultList: FunctionalComponent<Props> = (props: Props) => {
   };
 
   return (
-    <Fragment>
+    <>
 
       {/* condition component */}
       {props.renderConds(updateParams, params)}
@@ -69,7 +68,7 @@ const ResultList: FunctionalComponent<Props> = (props: Props) => {
         pageNumDisp={4}
         updatePage={(page: number) => {updateParams({page: page})}}
       >
-        <Fragment>
+        <>
           {isLoading ? (
             <span>loading</span>
           ) : (
@@ -79,10 +78,10 @@ const ResultList: FunctionalComponent<Props> = (props: Props) => {
               return props.renderCassette(item, idx + offset)
             }))
           }
-        </Fragment>
+        </>
       </ResultSummary>
 
-    </Fragment>
+    </>
   );
 };
 

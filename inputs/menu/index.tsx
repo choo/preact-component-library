@@ -1,5 +1,4 @@
-import { h, FunctionalComponent } from 'preact';
-import { useState, useRef } from 'preact/hooks';
+import { useState, useRef } from 'react';
 import style from './style.module.css';
 import Button from '../button';
 import {Item, PaperList} from '../paperlist';

@@ -1,5 +1,4 @@
-import { h, FunctionalComponent } from 'preact';
-import { useState, useRef } from 'preact/hooks';
+import { Component, useState, useRef } from 'react';
 import style from './style.module.css';
 import {Item, PaperList} from '../../../inputs/paperlist';
 
@@ -11,7 +10,7 @@ interface Props {
 type HamburgerItems = Item[];
 const BUTTON_LABEL_NAME = 'Hamburger Menu';
 
-const Hamburger: FunctionalComponent<Props> = (props: Props) => {
+const Hamburger: Component<Props> = (props: Props) => {
   const [isActive, setActive] = useState<boolean>(false);
   const popupRef = useRef<HTMLInputElement>(null);
 

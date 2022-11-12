@@ -1,4 +1,4 @@
-import { h, FunctionalComponent } from 'preact';
+import { Component } from 'react';
 import * as style from "./style.module.css";
 import {Hamburger, HamburgerItems} from './hamburger';
 
@@ -8,7 +8,7 @@ interface IProps {
   hamburgerItems?: HamburgerItems,
 }
 
-const Header: FunctionalComponent<IProps> = (props: IProps) => (
+const Header: Component<IProps> = (props: IProps) => (
   <header class={style.header}>
     <a href='/'>
       {props.logoPath && (

@@ -1,5 +1,3 @@
-import { h, FunctionalComponent, Fragment } from 'preact';
-
 //import {smoothScroll} from '../../utils/misc';
 import Grid from '../../layouts/grid';
 import Button from '../../inputs/button';
@@ -38,23 +36,23 @@ const Pagination: FunctionalComponent<Props> = (props: Props) => {
 
   return (
     <Grid container={true}>
-      <Fragment>
+      <>
         {makeButton(props.page > 1, props.page - 1, '<')}
         {start > 1 && (
-          <Fragment>
+          <>
             {makeButton(true, 1, 1)}
             <Grid flex={1}>...</Grid>
-          </Fragment>
+          </>
         )}
         {arrayRange(start, end).map(p => makeButton(p !== props.page, p, p))}
         {end < last && (
-          <Fragment>
+          <>
             <Grid flex={1}>...</Grid>
             {makeButton(true, last, last)}
-          </Fragment>
+          </>
         )}
         {makeButton(props.page < last, props.page + 1, '>')}
-      </Fragment>
+      </>
     </Grid>
   );
 };

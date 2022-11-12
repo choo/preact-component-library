@@ -1,5 +1,4 @@
-import { h, FunctionalComponent } from 'preact';
-import { useState } from 'preact/hooks';
+import { useState } from 'react';
 import style from './style.module.css';
 
 interface Props {

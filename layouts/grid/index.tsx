@@ -1,5 +1,3 @@
-import { h, FunctionalComponent } from 'preact';
-
 /**
  * component for grid layout
  */

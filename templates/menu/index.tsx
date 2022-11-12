@@ -1,5 +1,4 @@
-import { h, FunctionalComponent, Fragment } from 'preact';
-import { useState, useEffect } from 'preact/hooks';
+import { useState, useEffect } from 'react';
 
 import {buildParams} from '../../utils/param';
 
@@ -24,7 +23,7 @@ const MenuSample: FunctionalComponent = () => {
   };
 
   return (
-    <Fragment>
+    <>
       <h2>Menus</h2>
         <Grid container m='52px 0 8px' p='0'>
           <Grid m='0 12px 0 0'>
@@ -57,7 +56,7 @@ const MenuSample: FunctionalComponent = () => {
             />
           </Grid>
         </Grid>
-    </Fragment>
+    </>
   );
 };
 
