@@ -15,21 +15,21 @@ const commify = (x) => {
 const AnimationCounter = props => {
   const [value, setValue] = useState(0);
   const [prev, setPrev] = useState(0);
-  const [target, setTarget] = useState(null);
+  const [target, setTarget] = useState(props.target);
   const duration = props.duration || 300; // ms
   const interval = props.interval || 20; // ms
-  if (target === null || props.target != target) {
-    setPrev(value);
-  }
-  setTarget(props.target);
-
-  const isUp = prev <= props.target;
-  const diff = Math.abs(props.target - prev);
-  const numSteps = Math.ceil(duration / interval);
-  const step = Math.max(1, Math.ceil(diff / numSteps));
-  const delta = isUp ? step : -step;
 
   useEffect(() => {
+    setTarget(props.target);
+  }, [props.target]);
+
+  useEffect(() => {
+    const isUp = prev <= props.target;
+    const diff = Math.abs(props.target - prev);
+    const numSteps = Math.ceil(duration / interval);
+    const step = Math.max(1, Math.ceil(diff / numSteps));
+    const delta = isUp ? step : -step;
+
     const timer = setInterval(() => {
       const next = value + delta;
       if (isUp && next < target || !isUp && next > target) {
