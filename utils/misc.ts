@@ -63,7 +63,7 @@ export const isPortrait = () => {
   }
   return window.matchMedia('(orientation: portrait)').matches;
 };
-export const isSPView = () => {
+export const isSPPortrait = () => {
   return isSP() && isPortrait();
 };
 
