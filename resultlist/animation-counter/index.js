@@ -11,10 +11,12 @@ const commify = (x) => {
  *    duration : (optional) 300 (ms)
  *    interval : (optional) 20 (ms)
  *    style : (optional) style settings
+ *    initial  : (optional) initial number (Set to 0 if animation should
+ *        run when the page is opened.)
  */
 const AnimationCounter = props => {
-  const [value, setValue] = useState(0);
-  const [prev, setPrev] = useState(0);
+  const [value, setValue] = useState(props.initial ?? props.target);
+  const [prev, setPrev] = useState(props.initial ?? props.target);
   const [target, setTarget] = useState(props.target);
   const duration = props.duration || 300; // ms
   const interval = props.interval || 20; // ms
